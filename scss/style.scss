@@ -1,0 +1,249 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font: 1.6rem/1.5 Helvetica, sans-serif;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 1rem 0;
+}
+
+p {
+  margin:1rem 0rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  padding: 0 4rem;
+}
+
+button {
+  width: 7.5rem;
+  height: 3.5rem;
+  background-color: lightgray;
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  border: none;
+}
+
+button:focus, button:active {
+    outline: 0px;
+    border: 0.1rem solid black;
+}
+
+.invalid {
+  outline: 0.1rem solid red;
+}
+
+#product-price {
+  text-align: right;
+}
+
+#bred {
+  background-color: #e71e28;
+}
+
+#royal {
+  background-color: blue;
+}
+
+#shadow {
+  background-color: lightgray;
+}
+
+#wolf {
+  background-color: #9d7538;
+}
+
+input[type=text], input[type=email] {
+  width: 100%;
+  height: 3.5rem;
+  background-color: #eeeeee;
+  border: .1rem solid rgba(0,0,0,0.1);
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+}
+
+input[type=radio] {
+  padding: 2rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+}
+
+input[type=radio]:checked {
+  transform: scale(1.1);
+}
+
+input:invalid {
+  // outline: 0.1rem solid red;
+}
+
+#address-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-areas:
+  "address address address address2 address2 address2"
+  "city city state state zip zip"
+  "country country country country country country";
+  grid-column-gap: 1rem;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+label input#addressField, label input#addressField2 {
+  width: 50%;
+}
+
+label {
+  font-weight: bold;
+}
+
+#countryField {
+  -moz-appearance: none;
+  background-color: #eee;
+  border: .1rem solid rgba(0,0,0,0.1);
+  height: 3.5rem;
+  width: 100%;
+}
+
+.light {
+  font-weight: 300;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+hr {
+  margin: 2rem 0;
+  border: 0.05rem solid #bbb;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "product shipping summary";
+}
+
+#size-container {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+#size-container button {
+  width: 32%;
+  height: 5rem;
+  margin-right: 0;
+}
+
+#product, #shipping, #summary {
+  padding: 0 1rem;
+}
+
+#product {
+  grid-area: product;
+}
+
+#shipping {
+  grid-area: shipping;
+  background-color: #f2f2f2;
+}
+
+#summary {
+  grid-area: summary;
+  background-color: #e8e8e8;
+  position: relative;
+}
+
+.address {
+  grid-area: address;
+}
+
+.address2 {
+  grid-area: address2;
+}
+
+.city {
+  grid-area: city;
+}
+
+.state {
+  grid-area: state;
+}
+
+.zip {
+  grid-area: zip;
+}
+
+.country {
+  grid-area: country;
+  padding-bottom: 2rem;
+}
+
+.complete {
+  background-color: #27ae61;
+  color: #fff;
+  width: calc(100% - 2rem);
+  height: 5rem;
+  font-size: 1.6rem;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  left: 1rem;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  display: inline;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0;
+}
+
+.inline {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rem {
+  padding-bottom: 1rem;
+}
+
+
+
+
+@media screen and (max-width: 767px) {
+  main {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "product"
+    "shipping"
+    "summary";
+  }
+
+  #summary {
+    padding-bottom: 7rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  main {
+    margin: 0 15rem;
+  }
+}
